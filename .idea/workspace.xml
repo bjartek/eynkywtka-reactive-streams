@@ -2,67 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="126e9691-e0f6-4233-b630-01bf8399fd34" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/3_1_CpuTrend.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/3_2_Amdahl.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/3_3_Tools.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/3_4_abstractions.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/4.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/4_1_Reactive Manifesto.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/4_2_Responsive.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/4_3_Resilient.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/4_4_Elastic.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/4_5_MessageDriven.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/5.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/5_1_River.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/5_2_StreamTransformation.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/5_3_1_StreamUsage.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/5_3_2_Example.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/5_4_StreamNotcollection.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/5_5_julStream.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/5_6_julcode.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/5_7_problem_with_jul.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/6-5.mermaid" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/6.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/6_1what.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/6_2Who.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/6_3ForumlaSuccess.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/6_4Interface.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/6_5Sequence.mermaid" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/6_6Spesification.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/6_7backpressure.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/6_8asyncboundry.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/6_901Async2.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/6_902split.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/6_903merge.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/6_91pushpull.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/6_92boundries_everywhere.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/6_93_pipeline.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/6_94.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/7.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/7_1diagram.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/8_10akka.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/8_11akka.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/8_12akka_example.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/8_13akka_flow.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/8_21rx.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/8_31reactor.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/8_9examples.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/9.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/9_2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/slides/9_3.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/Interface.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/akkaflow.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/akkastream.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/julstream.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/plugin/code-focus/code-focus.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/slides/4.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/slides/2.md" afterPath="$PROJECT_DIR$/slides/2Agenda.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/revealit.jar" afterPath="$PROJECT_DIR$/revealit.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slides/1.md" afterPath="$PROJECT_DIR$/slides/1.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slides/3.md" afterPath="$PROJECT_DIR$/slides/3.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/mermaid/mermaid.js" afterPath="$PROJECT_DIR$/plugin/mermaid/mermaid.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template.html" afterPath="$PROJECT_DIR$/template.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/slides/3_1_CpuTrend.html" afterPath="$PROJECT_DIR$/slides/3_1_CpuTrend.html" />
     </list>
     <ignored path="eynkywtka-reactive-streams.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -84,19 +24,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="2Agenda.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/slides/2Agenda.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.6551723">
-              <caret line="9" column="108" selection-start-line="9" selection-start-column="78" selection-end-line="9" selection-end-column="78" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="8_21rx.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/slides/8_21rx.md">
           <provider selected="true" editor-type-id="text-editor">
@@ -153,16 +80,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="8_9examples.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="8_9examples.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/slides/8_9examples.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.029211296">
+            <state vertical-scroll-proportion="-1.0344827">
               <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="62" />
               <folding />
             </state>
           </provider>
           <provider editor-type-id="MarkdownPreviewEditor">
             <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="3_1_CpuTrend.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/slides/3_1_CpuTrend.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="18" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -227,7 +164,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/slides/4_4_Elastic.md" />
         <option value="$PROJECT_DIR$/slides/5_3_1_StreamUsage.md" />
         <option value="$PROJECT_DIR$/slides/3_4_abstractions.html" />
         <option value="$PROJECT_DIR$/slides/3_2_Amdahl.html" />
@@ -278,6 +214,7 @@
         <option value="$PROJECT_DIR$/slides/8_11akka.md" />
         <option value="$PROJECT_DIR$/slides/2Agenda.md" />
         <option value="$PROJECT_DIR$/slides/8_31reactor.md" />
+        <option value="$PROJECT_DIR$/slides/3_1_CpuTrend.html" />
       </list>
     </option>
   </component>
@@ -703,7 +640,7 @@
       <workItem from="1445541363847" duration="1420000" />
       <workItem from="1445543746539" duration="3968000" />
       <workItem from="1446230141708" duration="214000" />
-      <workItem from="1446547491445" duration="17128000" />
+      <workItem from="1446547491445" duration="17266000" />
     </task>
     <task id="LOCAL-00001" summary="Added v1.1 of revealit. Added more content to slides">
       <created>1445544198750</created>
@@ -715,7 +652,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22730000" />
+    <option name="totallyTimeSpent" value="22868000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="881" y="117" width="1436" height="1176" extended-state="0" />
@@ -847,14 +784,6 @@
       </provider>
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/slides/6-5.mermaid">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="99" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/code/julstream.java">
@@ -1272,13 +1201,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/slides/8_9examples.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.029211296">
+        <state vertical-scroll-proportion="-1.0344827">
           <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="62" />
           <folding />
         </state>
       </provider>
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slides/3_1_CpuTrend.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="18" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
