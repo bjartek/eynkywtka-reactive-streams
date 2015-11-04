@@ -60,6 +60,7 @@
   function showDiagram(slide) {
     if (!isDiagramSlide(slide)) { return; }
 
+    slide.style.top="50px"
     var dataElem = getDataElem(slide);
     var svgDiv = getDisplayDiv(slide);
 

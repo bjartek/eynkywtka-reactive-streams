@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   viewBox="0 0 380 324"
+   width="380pt"
+   height="27pc"
+   id="svg5504"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="landscape2.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="991"
+     inkscape:window-height="733"
+     id="namedview5590"
+     showgrid="false"
+     inkscape:zoom="2.3308642"
+     inkscape:cx="126.13714"
+     inkscape:cy="354.26112"
+     inkscape:window-x="1391"
+     inkscape:window-y="492"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g5520"
+     showguides="true"
+     inkscape:guide-bbox="true" />
+  <metadata
+     id="metadata5506">
+    <dc:date>2015-06-09 10:32Z</dc:date>
+    <!-- Produced by OmniGraffle Professional 5.3.6 -->
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs5508">
+    <font-face
+       font-family="Helvetica"
+       font-size="12"
+       units-per-em="1000"
+       underline-position="-75.683594"
+       underline-thickness="49.316406"
+       slope="0"
+       x-height="522.94922"
+       cap-height="717.28516"
+       ascent="770.01953"
+       descent="-229.98047"
+       font-weight="500"
+       id="font-face5510">
+      <font-face-src
+         id="font-face-src5512">
+        <font-face-name
+           name="Helvetica"
+           id="font-face-name5514" />
+      </font-face-src>
+    </font-face>
+  </defs>
+  <g
+     stroke="none"
+     stroke-opacity="1"
+     stroke-dasharray="none"
+     fill="none"
+     fill-opacity="1"
+     id="g5516">
+    <title
+       id="title5518">Canvas 6</title>
+    <g
+       id="g5520">
+      <title
+         id="title5522">Layer 3</title>
+      <path
+         d="m 52,51.4 121,0 c 3.866,0 7,3.134007 7,7 l 0,4 c 0,3.865993 -3.134,7 -7,7 l -121,0 c -3.865993,0 -7,-3.134007 -7,-7 0,0 0,0 0,0 l 0,-4 c 0,-3.865993 3.134007,-7 7,-7 z"
+         id="path5524"
+         inkscape:connector-curvature="0"
+         style="fill:#996633" />
+      <path
+         d="m 52,51.4 121,0 c 3.866,0 7,3.134007 7,7 l 0,4 c 0,3.865993 -3.134,7 -7,7 l -121,0 c -3.865993,0 -7,-3.134007 -7,-7 0,0 0,0 0,0 l 0,-4 c 0,-3.865993 3.134007,-7 7,-7 z"
+         id="path5526"
+         inkscape:connector-curvature="0"
+         style="stroke:#eee8d5;stroke-width:1;stroke-linecap:round;stroke-linejoin:round" />
+      <text
+         id="text5528"
+         x="50"
+         y="53.399994"
+         style="fill:#eee8d5">
+        <tspan
+           font-size="12"
+           font-weight="500"
+           x="69.161133"
+           y="64.399994"
+           textLength="86.677734"
+           id="tspan5530"
+           style="font-size:12px;font-weight:500;fill:#eee8d5;font-family:Helvetica">Ratpack (HTTP)</tspan>
+      </text>
+      <path
+         d="M 106 72 L 353 72 C 356.866 72 360 75.13401 360 79 L 360 83 C 360 86.86599 356.866 90 353 90 L 106 90 C 102.13401 90 99 86.86599 99 83 C 99 83 99 83 99 83 L 99 79 C 99 75.13401 102.13401 72 106 72 Z"
+         fill="#963"
+         id="path5532" />
+      <path
+         d="M 106 72 L 353 72 C 356.866 72 360 75.13401 360 79 L 360 83 C 360 86.86599 356.866 90 353 90 L 106 90 C 102.13401 90 99 86.86599 99 83 C 99 83 99 83 99 83 L 99 79 C 99 75.13401 102.13401 72 106 72 Z"
+         stroke="#eee8d5"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="1"
+         id="path5534" />
+      <text
+         transform="translate(104 74)"
+         fill="#eee8d5"
+         id="text5536">
+        <tspan
+           font-family="Helvetica"
+           font-size="12"
+           font-weight="500"
+           fill="#eee8d5"
+           x="94.8291"
+           y="11"
+           textLength="61.341797"
+           id="tspan5538">Akka HTTP</tspan>
+      </text>
+      <path
+         d="m 52,30.8 121,0 c 3.866,0 7,3.134007 7,7 l 0,4 c 0,3.865993 -3.134,7 -7,7 l -121,0 c -3.865993,0 -7,-3.134007 -7,-7 0,0 0,-2e-6 0,-2e-6 L 45,37.8 c 0,-3.865993 3.134007,-7 7,-7 z"
+         id="path5540"
+         inkscape:connector-curvature="0"
+         style="fill:#996633" />
+      <path
+         d="m 52,30.8 121,0 c 3.866,0 7,3.134007 7,7 l 0,4 c 0,3.865993 -3.134,7 -7,7 l -121,0 c -3.865993,0 -7,-3.134007 -7,-7 0,0 0,-2e-6 0,-2e-6 L 45,37.8 c 0,-3.865993 3.134007,-7 7,-7 z"
+         id="path5542"
+         inkscape:connector-curvature="0"
+         style="stroke:#eee8d5;stroke-width:1;stroke-linecap:round;stroke-linejoin:round" />
+      <text
+         id="text5544"
+         x="50"
+         y="32.800003"
+         style="fill:#eee8d5">
+        <tspan
+           font-size="12"
+           font-weight="500"
+           x="58.151367"
+           y="43.799988"
+           textLength="108.697266"
+           id="tspan5546"
+           style="font-size:12px;font-weight:500;fill:#eee8d5;font-family:Helvetica">MongoDB RS Driver</tspan>
+      </text>
+      <path
+         d="M 106 99 L 353 99 C 356.866 99 360 102.13401 360 106 L 360 110 C 360 113.86599 356.866 117 353 117 L 106 117 C 102.13401 117 99 113.86599 99 110 C 99 110 99 110 99 110 L 99 106 C 99 102.13401 102.13401 99 106 99 Z"
+         fill="#963"
+         id="path5548" />
+      <path
+         d="M 106 99 L 353 99 C 356.866 99 360 102.13401 360 106 L 360 110 C 360 113.86599 356.866 117 353 117 L 106 117 C 102.13401 117 99 113.86599 99 110 C 99 110 99 110 99 110 L 99 106 C 99 102.13401 102.13401 99 106 99 Z"
+         stroke="#eee8d5"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="1"
+         id="path5550" />
+      <text
+         transform="translate(104 101)"
+         fill="#eee8d5"
+         id="text5552">
+        <tspan
+           font-family="Helvetica"
+           font-size="12"
+           font-weight="500"
+           fill="#eee8d5"
+           x="86.49707"
+           y="11"
+           textLength="78.00586"
+           id="tspan5554">Akka IO (TCP)</tspan>
+      </text>
+      <path
+         d="M 52 126 L 182 126 C 185.866 126 189 129.134 189 133 L 189 137 C 189 140.866 185.866 144 182 144 L 52 144 C 48.134007 144 45 140.866 45 137 C 45 137 45 137 45 137 L 45 133 C 45 129.134 48.134007 126 52 126 Z"
+         fill="#963"
+         id="path5556" />
+      <path
+         d="M 52 126 L 182 126 C 185.866 126 189 129.134 189 133 L 189 137 C 189 140.866 185.866 144 182 144 L 52 144 C 48.134007 144 45 140.866 45 137 C 45 137 45 137 45 137 L 45 133 C 45 129.134 48.134007 126 52 126 Z"
+         stroke="#eee8d5"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="1"
+         id="path5558" />
+      <text
+         transform="translate(50 128)"
+         fill="#eee8d5"
+         id="text5560">
+        <tspan
+           font-family="Helvetica"
+           font-size="12"
+           font-weight="500"
+           fill="#eee8d5"
+           x="1.3134766"
+           y="11"
+           textLength="131.37305"
+           id="tspan5562">Reactive Rabbit (AMQP)</tspan>
+      </text>
+      <path
+         d="M 214 18 L 353 18 C 356.866 18 360 21.134007 360 25 L 360 29 C 360 32.865993 356.866 36 353 36 L 214 36 C 210.134 36 207 32.865993 207 29 C 207 29 207 28.999998 207 28.999998 L 207 25 C 207 21.134007 210.134 18 214 18 Z"
+         fill="#963"
+         id="path5564" />
+      <path
+         d="M 214 18 L 353 18 C 356.866 18 360 21.134007 360 25 L 360 29 C 360 32.865993 356.866 36 353 36 L 214 36 C 210.134 36 207 32.865993 207 29 C 207 29 207 28.999998 207 28.999998 L 207 25 C 207 21.134007 210.134 18 214 18 Z"
+         stroke="#eee8d5"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="1"
+         id="path5566" />
+      <text
+         transform="translate(212 20)"
+         fill="#eee8d5"
+         id="text5568">
+        <tspan
+           font-family="Helvetica"
+           font-size="12"
+           font-weight="500"
+           fill="#eee8d5"
+           x="13.4833984"
+           y="11"
+           textLength="116.0332"
+           id="tspan5570">Slick (Relational DBs)</tspan>
+      </text>
+      <path
+         d="M 52 153 L 227 153 C 230.866 153 234 156.134 234 160 L 234 164 C 234 167.866 230.866 171 227 171 L 52 171 C 48.134007 171 45 167.866 45 164 C 45 164 45 164 45 164 L 45 160 C 45 156.134 48.134007 153 52 153 Z"
+         fill="#963"
+         id="path5572" />
+      <path
+         d="M 52 153 L 227 153 C 230.866 153 234 156.134 234 160 L 234 164 C 234 167.866 230.866 171 227 171 L 52 171 C 48.134007 171 45 167.866 45 164 C 45 164 45 164 45 164 L 45 160 C 45 156.134 48.134007 153 52 153 Z"
+         stroke="#eee8d5"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="1"
+         id="path5574" />
+      <text
+         transform="translate(50 155)"
+         fill="#eee8d5"
+         id="text5576">
+        <tspan
+           font-family="Helvetica"
+           font-size="12"
+           font-weight="500"
+           fill="#eee8d5"
+           x="33.8125"
+           y="11"
+           textLength="8.0039062"
+           id="tspan5578">V</tspan>
+        <tspan
+           font-family="Helvetica"
+           font-size="12"
+           font-weight="500"
+           fill="#eee8d5"
+           x="41.160156"
+           y="11"
+           textLength="104.027344"
+           id="tspan5580">ert.x (App Platform)</tspan>
+      </text>
+      <path
+         d="M 223 126 L 344 126 C 347.866 126 351 129.134 351 133 L 351 137 C 351 140.866 347.866 144 344 144 L 223 144 C 219.134 144 216 140.866 216 137 C 216 137 216 137 216 137 L 216 133 C 216 129.134 219.134 126 223 126 Z"
+         fill="#963"
+         id="path5582" />
+      <path
+         d="M 223 126 L 344 126 C 347.866 126 351 129.134 351 133 L 351 137 C 351 140.866 347.866 144 344 144 L 223 144 C 219.134 144 216 140.866 216 137 C 216 137 216 137 216 137 L 216 133 C 216 129.134 219.134 126 223 126 Z"
+         stroke="#eee8d5"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="1"
+         id="path5584" />
+      <text
+         transform="translate(221 128)"
+         fill="#eee8d5"
+         id="text5586">
+        <tspan
+           font-family="Helvetica"
+           font-size="12"
+           font-weight="500"
+           fill="#eee8d5"
+           x="22.146484"
+           y="11"
+           textLength="80.70703"
+           id="tspan5588">Reactive Kafka</tspan>
+      </text>
+      <path
+         id="path5603"
+         d="m 52,30.8 121,0 c 3.866,0 7,3.134007 7,7 l 0,4 c 0,3.865993 -3.134,7 -7,7 l -121,0 c -3.865993,0 -7,-3.134007 -7,-7 0,0 0,-2e-6 0,-2e-6 L 45,37.8 c 0,-3.865993 3.134007,-7 7,-7 z"
+         inkscape:connector-curvature="0"
+         style="stroke:#eee8d5;stroke-width:1;stroke-linecap:round;stroke-linejoin:round" />
+      <path
+         style="fill:#996633"
+         inkscape:connector-curvature="0"
+         id="path5616"
+         d="m 52.686441,10.433898 120.999999,0 c 3.866,0 7,3.134007 7,7 l 0,4 c 0,3.865993 -3.134,7 -7,7 l -120.999999,0 c -3.865993,0 -7,-3.134007 -7,-7 0,0 0,-2e-6 0,-2e-6 l 0,-3.999998 c 0,-3.865993 3.134007,-7 7,-7 z" />
+      <path
+         style="stroke:#eee8d5;stroke-width:1;stroke-linecap:round;stroke-linejoin:round"
+         inkscape:connector-curvature="0"
+         id="path5618"
+         d="m 52.686441,10.433898 120.999999,0 c 3.866,0 7,3.134007 7,7 l 0,4 c 0,3.865993 -3.134,7 -7,7 l -120.999999,0 c -3.865993,0 -7,-3.134007 -7,-7 0,0 0,-2e-6 0,-2e-6 l 0,-3.999998 c 0,-3.865993 3.134007,-7 7,-7 z" />
+      <text
+         style="fill:#eee8d5"
+         y="12.433901"
+         x="49.086441"
+         id="text5620">
+        <tspan
+           style="font-size:12px;font-weight:500;fill:#eee8d5;font-family:Helvetica"
+           id="tspan5622"
+           textLength="108.697266"
+           y="23.433893"
+           x="57.237808"
+           font-weight="500"
+           font-size="12">reactivesocket</tspan>
+      </text>
+      <path
+         style="stroke:#eee8d5;stroke-width:1;stroke-linecap:round;stroke-linejoin:round"
+         inkscape:connector-curvature="0"
+         d="m 52.686441,10.433898 120.999999,0 c 3.866,0 7,3.134007 7,7 l 0,4 c 0,3.865993 -3.134,7 -7,7 l -120.999999,0 c -3.865993,0 -7,-3.134007 -7,-7 0,0 0,-2e-6 0,-2e-6 l 0,-3.999998 c 0,-3.865993 3.134007,-7 7,-7 z"
+         id="path5624" />
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="183.62288"
+         y="-30.889832"
+         id="text5626"
+         sodipodi:linespacing="125%"
+         transform="scale(0.8,0.8)"><tspan
+           sodipodi:role="line"
+           id="tspan5628"
+           x="183.62288"
+           y="-30.889832" /></text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+sequenceDiagram
+ participant Publisher
+ participant Subscriber
+
+ Subscriber->>Publisher: subscribe(Subscription)
+ Publisher->>Subscriber: onSubscribe(Subscription)
+ Subscriber->>Publisher:  Subscription.request(3)
+ loop 3 times
+         Publisher->>Subscriber: onNext
+ end
+  Publisher->>Subscriber: onComplete | onError
