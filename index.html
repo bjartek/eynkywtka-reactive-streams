@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+    <title>Everything you never knew you wanted to know about Reactive Streams</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="css/mermaid.css">
+
+		<script src="lib/js/mermaid.min.js"></script>
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+
+		<style>
+			.diagram-data {
+				display:none;
+			}
+			code.small {
+				font-size: 0.6em;
+			}
+			.reveal section img { background:none; border:none; box-shadow:none; }
+
+		</style>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+        		<section data-markdown><script type="text/template">
+<small>Everything you never knew you wanted to know about</small>
+# Reactive Streams 
+
+[Bjarte Stien Karlsen](http://www.bjarte.org) @ SITS
+
+<small>
+[slides](https://github.com/bjartek/eynkywtka-reactive-streams) created with [revealit](https://github.com/bjartek/revealit)/[reveal.js](http://lab.hakim.se/reveal-js/)
+</small>
+
+    </script></section><section data-markdown><script type="text/template">
+## Agenda
+
+- Why go Reactive?  
+- The Reactive Manifesto <!-- .element: class="fragment" -->
+- Streams <!-- .element: class="fragment" -->
+- Reactive Streams   <!-- .element: class="fragment" -->
+- Implementations                   <!-- .element: class="fragment" -->
+- Books <!-- .element: class="fragment" -->
+- Thanks <!-- .element: class="fragment" -->
+                                                                              
+    </script></section><section data-markdown><script type="text/template">
+# Why go Reactive?
+<!-- .slide: data-background="#ff0000" -->
+
+
+    </script></section>
+<section>
+<img style="width: 50%;"  src="images/freelunch.png" />
+<small>Kilde: <a href="http://www.gotw.ca/publications/concurrency-ddj.htm">The free lunch is over - Herb Sutter</a></small>
+</section>
+
+<section>
+
+<img style="width: 70%; margin-top: -1em" src="images/amdahl.svg" alt="Amdahl's Law" />
+<div class="fragment" style="position: absolute; margin: -43% 0 0 32%; padding: 0.4em; color: #1B2C3D; background-color: #eee8d5; font-weight: bold" data-fragment-index="1">
+    Parallelisation is key!
+</div>
+</section>
+
+<section>
+    <h2>Our old tools don't cut it</h2>
+    <ul>
+        <li class="fragment" data-fragment-index="0">Threads (programmed directly)
+            <ul>
+                <li>high memory overhead</li>
+                <li>starting/stopping is expensive</li>
+                <li>inter-thread communication entirely left to the user</li>
+            </ul>
+        </li>
+        <li class="fragment" data-fragment-index="1">Locks/Mutexes/Semaphores/`synchronized`/`volatile`
+            <ul>
+                <li>too little sync: race conditions, wrong results</li>
+                <li>too much sync: deadlocks, poor performance</li>
+                <li>very hard to use correctly</li>
+            </ul>
+        </li>
+        <h3 class="fragment" style="position: absolute; margin: -30% 0 0 30%; padding: 0.4em; border-top: 2px solid white; border-bottom: 2px solid white; background-color: #1B2C3D; -webkit-transform:rotate(30deg); -moz-transform:rotate(30deg)" data-fragment-index="2">Too low-level!</h3>
+    </ul>
+</section>
+
+<section>
+<h2>Selected concurrency abstractions</h2>
+<img style="width:100%;"  src="images/concurrency-abstractions0.svg" alt="Concurrency Abstractions Overview">
+<img class="fragment" style="position: absolute; width:100%; margin-left: -90%" src="images/concurrency-abstractions1.svg" alt="Concurrency Abstractions Overview" data-fragment-index="0">
+</section>
+<section data-markdown><script type="text/template">
+# Reactive Manifesto
+    </script></section>
+<section>
+<img src="images/reactive-traits.svg" />
+<small>Kilde: <a href="http://www.reactivemanifesto.org">Reactive Manifesto</a></small></section>
+<section data-markdown><script type="text/template">
+## Responsive
+ - responds in a timemly manner if at all possible       <!-- .element: class="fragment" -->
+ - focus on providing rapid and consistent response times  <!-- .element: class="fragment" -->
+ - establishing reliable upper bounds             <!-- .element: class="fragment" -->
+ - deliver a consistent quality of service.     <!-- .element: class="fragment" -->
+ - simplifies error handling,             <!-- .element: class="fragment" -->
+
+    </script></section><section data-markdown><script type="text/template">
+## Resilient
+- Let it crash   <!-- .element: class="fragment" -->
+- stays responsive in the face of failure         <!-- .element: class="fragment" -->
+- achieved by replication, containment, isolation and delegation       <!-- .element: class="fragment" -->
+- failures are contained within each component    <!-- .element: class="fragment" -->
+- recovery of each component is delegated to another (external) component        <!-- .element: class="fragment" -->
+
+    </script></section><section data-markdown><script type="text/template">
+## Elastic
+- stays responsive under varying workload <!-- .element: class="fragment" -->
+- scale resources based on input rate    <!-- .element: class="fragment" -->
+- implies designs that have no contention points or central bottlenecks      <!-- .element: class="fragment" -->
+
+
+    </script></section><section data-markdown><script type="text/template">
+## Message Driven
+- asynchronous message-passing to establish a boundary between components     <!-- .element: class="fragment" -->
+- ensures loose coupling, isolation, location transparency     <!-- .element: class="fragment" -->
+- delegate errors as messages                        <!-- .element: class="fragment" -->
+- enables load management, elasticity, and flow control    <!-- .element: class="fragment" -->
+- shaping and monitoring the message queues in the system and applying back-pressure  <!-- .element: class="fragment" -->
+    </script></section><section data-markdown><script type="text/template">
+# Streams
+
+ 
+    </script></section>
+<section>
+<img src="images/teinefossen.jpg" />
+<small>Kilde: <a href="http://birkenes-avisa.no/2015/glimt-fra-birkelandsdagene-2015/villaksens-dag-laksefiskere-i-teinefossen/">birkenes-avisa.no</a></small>
+</section>
+
+<section>
+<img src="images/bow_river.jpg" />
+<small>Kilde: http://www.cgenarchive.org/uploads/2/5/2/6/25269392/7797686_orig.jpg</small>
+
+
+</section>
+<section data-markdown><script type="text/template">
+## Common Uses of Streams
+
+- Bulk data transfer     <!-- .element: class="fragment" -->
+- Real-time data sources   <!-- .element: class="fragment" -->
+- Batch processing of large data sets    <!-- .element: class="fragment" -->
+- Monitoring and analytics     <!-- .element: class="fragment" -->
+- Structuring and Scaling Business Logic   <!-- .element: class="fragment" -->
+ 
+ 
+    </script></section>
+<section>
+<h2>Example: Scaling Logic</h2>
+<img class="fragment" style="width:90%" src="images/scaling0.svg" alt="scaling" data-fragment-index="0">
+<img class="fragment" style="position: absolute; width:90%; margin-left: -90%" src="images/scaling1.svg" alt="scaling" data-fragment-index="1">
+<img class="fragment" style="position: absolute; width:90%; margin-left: -90%" src="images/scaling2.svg" alt="scaling" data-fragment-index="2">
+<img class="fragment" style="position: absolute; width:90%; margin-left: -90%" src="images/scaling3.svg" alt="scaling" data-fragment-index="3">
+<img class="fragment" style="position: absolute; width:90%; margin-left: -90%" src="images/scaling4.svg" alt="scaling" data-fragment-index="4">
+</section>
+<section data-markdown><script type="text/template">
+## A stream is not an colleciton
+ 
+ - size         <!-- .element: class="fragment" -->
+ - x.head + x.tail           <!-- .element: class="fragment" -->
+ - iterate all elements     <!-- .element: class="fragment" -->
+ - content not dependent on who is processing      <!-- .element: class="fragment" -->
+ - content not dependent on when it is processed     <!-- .element: class="fragment" -->
+ - speed of the processor      <!-- .element: class="fragment" -->
+ - speed of the producer      <!-- .element: class="fragment" -->
+ 
+
+    </script></section><section data-markdown><script type="text/template">
+# Why not java 8 stream
+<!-- .slide: data-background="#ff0000" -->
+
+    </script></section>
+<section>
+<h2>Simple stream example</h2>
+<pre><code class="java">import java.util.stream.*
+
+final Stream&lt;Integer&gt; s = Stream.of(1,2,3);
+
+final Stream&lt;String&gt; s2 = s.map(i -&gt; &quot;a&quot; + 1);
+
+s2.iterator(); //pull
+
+s2.forEach(i -&gt; System.out.println(i));  //push</code></pre>
+</section>
+<section data-markdown><script type="text/template">
+## Java8 Stream
+ - dsl for descirbing transformation          <!-- .element: class="fragment" -->
+ - staged computation             <!-- .element: class="fragment" -->
+ - cannot be reused               <!-- .element: class="fragment" -->
+ - eager model of execution       <!-- .element: class="fragment" -->
+ - push/pull chosen statically    <!-- .element: class="fragment" -->
+ 
+    </script></section><section data-markdown><script type="text/template">
+# Reactive Streams
+<!-- .slide: data-background="#B8860B" -->
+
+    </script></section><section data-markdown><script type="text/template">
+>statically-typed, high-performance, low latency, asynchronous streams of data with built-in non-blocking back pressure
+    </script></section>
+<section>
+<img src="images/netflix.png" />
+<img src="images/redhat.png" />
+<img src="images/twitter.png" />
+<img src="images/typesafe.png" />
+<img src="images/oracle.png" />
+<img src="images/pivotal.png" />
+
+</section>
+<section data-markdown><script type="text/template">
+## Success formula
+- minimial interface    <!-- .element: class="fragment" -->
+- rigorous specification of semantics   <!-- .element: class="fragment" -->
+- TCK for verification     <!-- .element: class="fragment" -->
+- API freedom           <!-- .element: class="fragment" -->
+
+
+    </script></section>
+<section>
+<h2>Interface</h2>
+<pre><code class="java">public interface Publisher&lt;T&gt; {
+    public void subscribe(Subscriber&lt;? super T&gt; s);
+}
+public interface Subscriber&lt;T&gt; {
+    public void onSubscribe(Subscription s);
+    public void onNext(T t);
+    public void onError(Throwable t);
+    public void onComplete();
+}
+public interface Subscription {
+    public void request(long n);
+    public void cancel();
+}
+public interface Processor&lt;T, R&gt;
+        extends Subscriber&lt;T&gt;, Publisher&lt;R&gt; {
+}</code></pre>
+<h3 class="fragment" style="position: absolute; margin: -32% 0 0 20%; padding: 0.4em; border-top: 2px solid white; border-bottom: 2px solid white; background-color: #1B2C3D; -webkit-transform:rotate(30deg); -moz-transform:rotate(20deg)" data-fragment-index="0">
+    Not for user consumption!<br>
+    (Use RS Impl Library instead)
+</h3></section>
+<section data-background="#FFFFFF" class="diagram-slide">
+      <span class="diagram-data">
+        sequenceDiagram
+ participant Publisher
+ participant Subscriber
+
+ Subscriber->>Publisher: subscribe(Subscription)
+ Publisher->>Subscriber: onSubscribe(Subscription)
+ Subscriber->>Publisher:  Subscription.request(3)
+ loop 3 times
+         Publisher->>Subscriber: onNext
+ end
+  Publisher->>Subscriber: onComplete | onError
+      </span>
+      <div class="diagram-display"></div>
+    </section><section data-markdown><script type="text/template">
+## rigorous specification
+- [publisher](https://github.com/reactive-streams/reactive-streams-jvm/blob/master/README.md#1-publisher-code) has 11 rules   
+- [subscriber](https://github.com/reactive-streams/reactive-streams-jvm/blob/master/README.md#2-subscriber-code) has 13 rules   
+- [subscription](https://github.com/reactive-streams/reactive-streams-jvm/blob/master/README.md#3-subscription-code) has 17 rules    
+- [producer](https://github.com/reactive-streams/reactive-streams-jvm/blob/master/README.md#4processor-code) has 2 rules \*          
+
+    </script></section>
+<section>
+<h2>Backpressure</h2>
+<img class="fragment" style="width:90%" src="images/pipeline0.svg" alt="Backpressure needed" data-fragment-index="0">
+<img class="fragment" style="position: absolute; width:90%; margin-left: -90%" src="images/pipeline1.svg" alt="Backpressure needed" data-fragment-index="1">
+<img class="fragment" style="position: absolute; width:90%; margin-left: -90%" src="images/pipeline2.svg" alt="Backpressure needed" data-fragment-index="2">
+<img class="fragment" style="position: absolute; width:90%; margin-left: -90%" src="images/pipeline3.svg" alt="Backpressure needed" data-fragment-index="3">
+<img class="fragment" style="position: absolute; width:90%; margin-left: -90%" src="images/pipeline4.svg" alt="Backpressure needed" data-fragment-index="4">
+<img class="fragment" style="position: absolute; width:90%; margin-left: -90%" src="images/pipeline5.svg" alt="Backpressure needed" data-fragment-index="5">
+</section>
+
+<section>
+<h2>Async Boundary</h2>
+<img style="width:90%" src="images/async-boundary0.svg" alt="Async Boundary">
+<img class="fragment" style="position: absolute; width:90%; margin-left: -90%" src="images/async-boundary1.svg" alt="Async Boundary" data-fragment-index="0">
+<img class="fragment" style="position: absolute; width:90%; margin-left: -90%" src="images/async-boundary2.svg" alt="Async Boundary" data-fragment-index="1">
+<img class="fragment" style="position: absolute; width:90%; margin-left: -90%" src="images/async-boundary3.svg" alt="Async Boundary" data-fragment-index="2">
+<img class="fragment" style="position: absolute; width:90%; margin-left: -90%" src="images/async-boundary4.svg" alt="Async Boundary" data-fragment-index="3">
+<img class="fragment" style="position: absolute; width:90%; margin-left: -90%" src="images/async-boundary5.svg" alt="Async Boundary" data-fragment-index="4">
+<img class="fragment" style="position: absolute; width:90%; margin-left: -90%" src="images/async-boundary6.svg" alt="Async Boundary" data-fragment-index="5">
+<img class="fragment" style="position: absolute; width:90%; margin-left: -90%" src="images/async-boundary7.svg" alt="Async Boundary" data-fragment-index="6">
+<img class="fragment" style="position: absolute; width:90%; margin-left: -90%" src="images/async-boundary8.svg" alt="Async Boundary" data-fragment-index="7">
+</section>
+<section data-markdown><script type="text/template">
+## Async Boundary
+- Data elements flow downstream
+- Demand flows upstream
+- Data items flow only when there is demand
+- Recipient is in control of incoming data rate
+- Data in flight is bounded by signaled demand
+
+    </script></section>
+<section>
+<img src="images/river-split.jpg" />
+<small>Kilde:http://media-cdn.tripadvisor.com/media/photo-s/05/be/70/1a/river-split.jpg</small>
+</section>
+
+<section>
+<img src="images/river-merge.jpg" />
+<small>Kilde: https://hippiefreak69.files.wordpress.com/2015/07/river.jpg</small>
+</section>
+<section data-markdown><script type="text/template">
+## DYNAMIC PUSH/PULL
+- “Push” behavior when consumer is faster
+- “Pull” behavior when producer is faster
+- Switches automatically between these
+- Batching demand allows batching data
+    </script></section><section data-markdown><script type="text/template">
+## ASYNC BOUNDARIES ARE EVERYWHERE
+- Between actors
+- Between threads
+- Between CPUs
+- Between network nodes
+- Between applications
+    </script></section>
+<section>
+<h2>Pipeline Processing Done Right</h2>
+<img style="width:90%" src="images/right0.svg" alt="Pipeline Done Right">
+<img class="fragment" style="position: absolute; width:90%; margin-left: -90%" src="images/right1.svg" alt="Pipeline Done Right" data-fragment-index="0">
+<img class="fragment" style="position: absolute; width:90%; margin-left: -90%" src="images/right2.svg" alt="Pipeline Done Right" data-fragment-index="1">
+<img class="fragment" style="position: absolute; width:90%; margin-left: -90%" src="images/right3.svg" alt="Pipeline Done Right" data-fragment-index="2">
+<img class="fragment" style="position: absolute; width:90%; margin-left: -90%" src="images/right4.svg" alt="Pipeline Done Right" data-fragment-index="3">
+<img class="fragment" style="position: absolute; width:90%; margin-left: -90%" src="images/right5.svg" alt="Pipeline Done Right" data-fragment-index="4">
+<img class="fragment" style="position: absolute; width:90%; margin-left: -90%" src="images/right6.svg" alt="Pipeline Done Right" data-fragment-index="5">
+</section>
+
+<section>
+    <h2>Continuous Pipelines across Machines</h2>
+    <img style="width:90%" src="images/network0.svg" alt="Multi-machine Pipeline">
+    <img class="fragment" style="position: absolute; width:90%; margin-left: -90%" src="images/network1.svg" alt="Multi-machine Pipeline" data-fragment-index="0">
+</section></section>
+<section data-markdown><script type="text/template">
+# Implementations
+    </script></section>
+<section>
+<h2>Landscape</h2>
+<img class="fragment" style="width:70%" src="images/landscape0.svg" alt="Implementation Landscape" data-fragment-index="0" />
+<img class="fragment" style="position: absolute; width:70%; margin-left: -70%" src="images/landscape1.svg" alt="Implementation Landscape" data-fragment-index="1" />
+<img class="fragment" style="position: absolute; width:70%; margin-left: -70%" src="images/landscape2.svg" alt="Implementation Landscape" data-fragment-index="2" /></section>
+<section data-markdown><script type="text/template">
+# akka-streams
+    </script></section><section data-markdown><script type="text/template">
+## AKKA-STREAM: BASIC CONCEPTS
+- Built from scratch on Reactive Streams Protocol     <!-- .element: class="fragment" -->
+- Java and Scala user APIs              <!-- .element: class="fragment" -->
+- Supports fully general stream-graphs      <!-- .element: class="fragment" -->
+- Source[T]: the open end of a pipeline producing Ts     <!-- .element: class="fragment" -->
+- Sink[T]: an "end-piece" for taking in Ts                <!-- .element: class="fragment" -->
+- Flow[A, B]: an unconnected piece of pipeline           <!-- .element: class="fragment" -->
+- Generally, all abstractions are re-useable            <!-- .element: class="fragment" -->
+- Number of pre-defined transformations still somewhat small  <!-- .element: class="fragment" -->
+- Not very optimized yet, still marked "experimental"  <!-- .element: class="fragment" -->
+
+    </script></section>
+<section>
+<h3>AKKA-STREAM: SIMPLE STREAM EXAMPLE</h3>
+<pre><code class="small scala">Source(stockTickerPublisher)                 // Source[Tick]
+        .filter(_.symbol == &quot;AAPL&quot;)                // Source[Tick]
+        .buffer(100000, OverflowStrategy.DropHead) // Source[Tick]
+        .splitWhen(x =&gt; isNewDay(x.timeStamp))     // Source[Source[Tick]]
+        .headAndTail                               // Source[(Tick, Source[Tick])]
+        .map { case (head, tail) =&gt;
+            head -&gt; tail.groupedWithin(1000, 1.second)
+        }                                          // Source[(Tick, Source[Seq[[Tick]]])]
+        .via(someFlow)                             // Source[RichTick]
+        .map(toCandleStickChartColumn)             // Source[CandleStickChartColumn]
+        .to(candleStickChartSink)                  // RunnableFlow
+        .run()                                     // MaterializedMap
+
+</code></pre>
+</section>
+
+<section>
+<h3>AKKA-STREAM: FLOW GRAPH EXAMPLE</h3>
+<img style="width:90%" src="images/flowgraph.svg" alt="Flowgraph">
+<pre><code class="scala">FlowGraph { implicit b &rArr;
+  val bcast = Broadcast[T]
+  val merge = Merge[T]
+
+  source ~&gt; f1 ~&gt; bcast ~&gt; f2 ~&gt; merge ~&gt; f3 ~&gt; sink
+                  bcast ~&gt; f4 ~&gt; merge
+}.run()</code></pre>
+</section>
+<section data-markdown><script type="text/template">
+##REACTIVE EXTENSIONS
+- Mostly driven by Netflix Engineers
+- Broke the ground for Reactive Streams
+- Oldest, most known, most mature
+- Support for many different languages
+- Doesn't directly support RS yet,
+- currently still needs adapter lib
+- Backpressure not fully supported yet,
+- will do so in version 2.0
+    </script></section><section data-markdown><script type="text/template">
+## REACTOR
+- RS implementation built from scratch
+- Java only
+- Internally based a lot on Disruptor
+- Focus: Performance
+- Current version (2.0.3) not very mature yet
+- Driven by Engineers from Pivotal
+    </script></section><section data-markdown><script type="text/template">
+## Examples
+- [word count reddit akka-stream](https://github.com/pkinsky/akka-streams-example/blob/master/src/main/scala/WordCount.scala)
+- [MONTE CARLO PIE](https://github.com/alexandru/rs-comparison)
+
+
+    </script></section>
+<section>
+<h2>Books</h2>
+
+<a href="http://www.amazon.com/gp/product/0133846830/ref=pd_lpo_sbs_dp_ss_1?pf_rd_p=1944687742&pf_rd_s=lpo-top-stripe-1&pf_rd_t=201&pf_rd_i=1617291803&pf_rd_m=ATVPDKIKX0DER&pf_rd_r=154695WG96Y98YX6P8DY"><img src="images/rmpam_book.jpg" style="width: 30%"/></a>
+<a href="http://www.amazon.com/Reactive-Design-Patterns-Roland-Kuhn/dp/1617291803"><img src="images/rdp_book.jpg"  style="width: 30%"/></a>
+<a href="http://www.amazon.com/Designing-Data-Intensive-Applications-Reliable-Maintainable/dp/1449373321/ref=sr_1_1?s=books&ie=UTF8&qid=1446555220&sr=1-1&keywords=data+intensive+applications"><img src="images/ddia_book.jpg"  style="width: 30%" /></a>
+</section>
+
+<section>
+<h2>Sources</h2>
+
+<a href="http://spray.io/berlin/">Mathias Doenitz presentation for Berlin Scala User group</a>
+<a href="http://www.slideshare.net/rolandkuhn/reactive-streams">Roland Kuhns webinar about reactive streams </a>
+<a href="http://spray.io/scaladays/2015">Mathias Doenitz presentation for scala days 2015</a>
+</section>
+
+<section>
+<h1><a href="http://gee.cs.oswego.edu/dl/jsr166/dist/docs/java/util/concurrent/Flow.html">Reactive streams will be in java9!</a> </h1></section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/mermaid/mermaid.js' },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+		</script>
+
+	</body>
+</html>

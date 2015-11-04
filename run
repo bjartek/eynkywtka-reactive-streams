@@ -1,0 +1,3 @@
+#!/bin/bash
+
+kicker -e "java -jar revealit.jar" & python -m SimpleHTTPServer 8000 && fg

@@ -1,0 +1,18 @@
+    <h2>Our old tools don't cut it</h2>
+    <ul>
+        <li class="fragment" data-fragment-index="0">Threads (programmed directly)
+            <ul>
+                <li>high memory overhead</li>
+                <li>starting/stopping is expensive</li>
+                <li>inter-thread communication entirely left to the user</li>
+            </ul>
+        </li>
+        <li class="fragment" data-fragment-index="1">Locks/Mutexes/Semaphores/`synchronized`/`volatile`
+            <ul>
+                <li>too little sync: race conditions, wrong results</li>
+                <li>too much sync: deadlocks, poor performance</li>
+                <li>very hard to use correctly</li>
+            </ul>
+        </li>
+        <h3 class="fragment" style="position: absolute; margin: -30% 0 0 30%; padding: 0.4em; border-top: 2px solid white; border-bottom: 2px solid white; background-color: #1B2C3D; -webkit-transform:rotate(30deg); -moz-transform:rotate(30deg)" data-fragment-index="2">Too low-level!</h3>
+    </ul>
